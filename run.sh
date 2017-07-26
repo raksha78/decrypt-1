@@ -42,12 +42,14 @@ shell_array_of_keys=$(echo $keys | jq -c '.[]')
 for key in $shell_array_of_keys; do
   echo $key
   value=$(cat config.json | jq '.'config.environment.testing.secureKeys.$key)
-  echo $value
   $value > encrypted.txt
   cat encrypted.txt
   shippable_decrypt "encrypted.txt" "/tmp/ssh/00_sub"
+  pwd
+  ls -al
   cat encrypted.txt.decrypted
   encrypted.txt.decrypted >> \n
 done;
+
 cat encrypted.txt.decrypted
 source encrypted.txt.decrypted
