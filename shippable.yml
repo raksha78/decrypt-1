@@ -4,3 +4,4 @@ build:
   ci:
     - bash run.sh
     - echo $DOCKER_PASSWORD
+    - cat /tmp/ssh/00_sub
