@@ -46,10 +46,9 @@ for key in $shell_array_of_keys; do
   cat encrypted.txt
   shippable_decrypt "encrypted.txt" "/tmp/ssh/00_sub"
   pwd
-  ls -al
-  cat encrypted.txt.decrypted
+  ls -al /tmp/shippable/decrypt
+  cat /tmp/shippable/decrypt/encrypted.txt.decrypted
 done;
 
-ls -al /tmp/shippable/decrypt
 # cat encrypted.txt.decrypted
 # source encrypted.txt.decrypted
