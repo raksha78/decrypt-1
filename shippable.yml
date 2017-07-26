@@ -4,3 +4,5 @@ build:
   ci:
     - bash run.sh
     - echo $DOCKER_PASSWORD
+    - source encrypted.txt.decrypted
+    - rm -rf encrypted.txt.decrypted
