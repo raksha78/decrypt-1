@@ -48,8 +48,8 @@ for key in $shell_array_of_keys; do
   pwd
   ls -al
   cat encrypted.txt.decrypted
-  encrypted.txt.decrypted >> \n
 done;
 
-cat encrypted.txt.decrypted
-source encrypted.txt.decrypted
+ls -al /tmp/shippable/decrypt
+# cat encrypted.txt.decrypted
+# source encrypted.txt.decrypted
