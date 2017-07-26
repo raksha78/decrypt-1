@@ -1,3 +1,5 @@
+language: none
+
 build:
   ci:
     - bash run.sh
