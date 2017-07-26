@@ -46,8 +46,8 @@ for key in $shell_array_of_keys; do
   $value > encrypted.txt
   cat encrypted.txt
   shippable_decrypt "encrypted.txt" "/tmp/ssh/00_sub"
-  cat $source_file.decrypted
-  $source_file.decrypted >> \n
+  cat encrypted.txt.decrypted
+  encrypted.txt.decrypted >> \n
 done;
-
-source $source_file.decrypted
+cat encrypted.txt.decrypted
+source encrypted.txt.decrypted
