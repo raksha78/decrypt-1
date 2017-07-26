@@ -44,7 +44,7 @@ for key in $shell_array_of_keys; do
   value=$(cat config.json | jq -r '.'config.environment.testing.secureKeys.$key)
   echo $value > encrypted.txt
   cat encrypted.txt
-  shippable_decrypt "encrypted.txt" "key.pem"
+  shippable_decrypt "encrypted.txt"
   pwd
   ls -al
   ls -al /tmp/shippable/decrypt
