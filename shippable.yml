@@ -1,4 +1,4 @@
 build:
   ci:
-  	- run.sh
-  	- echo $DOCKER_PASSWORD
+    - bash run.sh
+    - echo $DOCKER_PASSWORD
