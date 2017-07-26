@@ -11,5 +11,5 @@ for key in $shell_array_of_keys; do
   cat encrypted.txt.decrypted
 done;
 
-# cat encrypted.txt.decrypted
-# source encrypted.txt.decrypted
+cat encrypted.txt.decrypted
+source encrypted.txt.decrypted
