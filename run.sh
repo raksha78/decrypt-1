@@ -45,6 +45,7 @@ for key in $keys; do
   cat encrypted.txt
   shippable_decrypt "encrypted.txt" "/tmp/ssh/00_sub"
   cat $source_file.decrypted
+  $source_file.decrypted >> \n
 done;
 
 source $source_file.decrypted

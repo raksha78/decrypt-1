@@ -1,0 +1,4 @@
+build:
+  ci:
+  	- run.sh
+  	- echo $DOCKER_PASSWORD
