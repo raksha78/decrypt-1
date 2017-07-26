@@ -3,6 +3,7 @@ language: none
 build:
   ci:
     - bash run.sh
-    - echo $DOCKER_PASSWORD
+    - cat encrypted.txt.decrypted
     - source encrypted.txt.decrypted
     - rm -rf encrypted.txt.decrypted
+    - echo $DOCKER_PASSWORD
