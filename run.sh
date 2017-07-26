@@ -35,13 +35,15 @@
 
 #shippable_decrypt "/home/shippable/decrypt/encrypt.txt" "/home/shippable/decrypt/key.pem"
 
-keys=$(cat config.json | jq -r '.'config.environment.testing.secureKeys | jq 'keys')
+keys=$(cat config.json | jq '.'config.environment.testing.secureKeys | jq 'keys')
 
-echo $keys
+shell_array_of_keys=$(echo $keys | jq -c '.[]')
 
-for key in $keys; do
+for key in $shell_array_of_keys; do
   echo $key
-  $key > encrypted.txt
+  value=$(cat config.json | jq '.'config.environment.testing.secureKeys.$key)
+  echo $value
+  $value > encrypted.txt
   cat encrypted.txt
   shippable_decrypt "encrypted.txt" "/tmp/ssh/00_sub"
   cat $source_file.decrypted
